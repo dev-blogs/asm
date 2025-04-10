@@ -37,10 +37,9 @@ ret_0:          jmp quit
 quest_case:
 star_case:      cmp al, 0x2A
                 jnz dflt
-                mov ecx, 0
 
 lp2:            mov eax, edi
-                add eax, ecx
+		add eax, [ebp - 4]
                 push eax
                 mov eax, esi
                 inc eax
@@ -60,7 +59,7 @@ check_zero:     test bl, bl
                 jnz end_lp2
                 jmp quit
 
-end_lp2:        inc ecx
+end_lp2:        inc dword [ebp - 4]
                 jmp lp2
 
 dflt:           cmp al, bl
