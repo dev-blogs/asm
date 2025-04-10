@@ -1,0 +1,22 @@
+Steps to run and check:
+
+1. Clean up build folder by command: ./clean
+
+2. Compile regex.asm to by command: ./build
+
+3. Run debbuger by command: gdb ./regex
+
+4. Setup break point: break check or break _start
+
+5. Enter 'run' commnd
+
+6. Setup dissasembly intel: set disassembly-flavor intel
+
+7. Setup asm layout: layout asm
+
+8. Setup regs layout: layout regs
+
+9. Next pass code by entering:
+	'nexti' for one step
+	'next' for next break point
+	'stepi' for entering into function
