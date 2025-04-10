@@ -8,7 +8,7 @@ Steps to run and check:
 4. Setup break point by command: 'break <BREAK_POINT>', f.e. 'break check' or 'break _start'
 
 In debugger:
-1. Enter 'run' commnd
+1. Enter 'run' command
 
 2. Setup dissasembly intel by command: 'set disassembly-flavor intel'
 
