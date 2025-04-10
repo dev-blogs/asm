@@ -15,7 +15,9 @@ match:
                 push ebp
                 mov ebp, esp
                 sub esp, 4
-                mov [ebp - 4], dword 11
+                mov [ebp - 4], dword 0
+                push esi
+                push edi
 
                 mov esi, [ebp + 8]
                 mov edi, [ebp + 12]
@@ -37,19 +39,15 @@ star_case:      cmp al, 0x2A
                 jnz dflt
                 mov ecx, 0
 
-lp2:            push esi
-                push edi
-
-                add edi, ecx
-                inc esi
-
-                push edi
-                push esi
+lp2:            mov eax, edi
+                add eax, ecx
+                push eax
+                mov eax, esi
+                inc eax
+                push eax
                 call match
                 add esp, 8
 
-                pop edi
-                pop esi
                 mov eax, [esi]
                 mov ebx, [edi]
 
@@ -74,6 +72,8 @@ end_for:        inc esi
                 inc edi
                 jmp for
 
-quit:           mov esp, ebp
+quit:           pop edi
+                pop esi
+                mov esp, ebp
                 pop ebp
                 ret
