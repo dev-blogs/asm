@@ -1,7 +1,7 @@
 Steps to run and check:
 1. Clean up build folder by command: './clean'
 
-2. Compile regex.asm by command: './build'
+2. Compile asm file by command: './build'
 
 3. Run debbuger by command: 'gdb ./<APP_NAME>'
 
