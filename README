@@ -1,11 +1,14 @@
 Steps to run and check:
-1. Clean up build folder by command: './clean'
 
-2. Compile asm file by command: './build'
+1. Change clean.sh and build.sh names of application to current app name
 
-3. Run debbuger by command: 'gdb ./<APP_NAME>'
+2. Clean up build folder by command: './clean'
 
-4. Setup break point by command: 'break <BREAK_POINT>', f.e. 'break check' or 'break _start'
+3. Compile asm file by command: './build'
+
+4. Run debbuger by command: 'gdb ./<APP_NAME>'
+
+5. Setup break point by command: 'break <BREAK_POINT>', f.e. 'break check' or 'break _start'
 
 In debugger:
 1. Enter 'run' command
@@ -14,9 +17,9 @@ In debugger:
 
 3. Setup asm layout by command: 'layout asm'
 
-8. Setup regs layout by command: 'layout regs'
+4. Setup regs layout by command: 'layout regs'
 
-9. Go by code entering:
+5. Go by code entering:
   'nexti' going one step
   'next' go to next break point
   'stepi' entering into function
