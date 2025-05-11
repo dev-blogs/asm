@@ -1,4 +1,5 @@
 %include "stud_io.inc"
+%include "call_func.inc
 global _start
 
 section .data
@@ -6,16 +7,12 @@ section .data
         pattern db "a*ec", 0
 
 section .text
-_start: push string
-        push pattern
-        call match
-        add esp, 8
+_start: pcall2 match, pattern, string
 check:  FINISH
 match:
                 push ebp
                 mov ebp, esp
-                sub esp, 4
-                mov [ebp - 4], dword 0
+                sub esp, 12
                 push esi
                 push edi
 
@@ -39,13 +36,14 @@ star_case:      cmp al, 0x2A
                 jnz dflt
 
 lp2:            mov eax, edi
-		add eax, [ebp - 4]
-                push eax
+		add eax, [local1]
+                mov [local2], eax
+
                 mov eax, esi
                 inc eax
-                push eax
-                call match
-                add esp, 8
+                mov [local3], eax
+
+                pcall2 match, dword [local3], dword [local2]
 
                 mov eax, [esi]
                 mov ebx, [edi]
