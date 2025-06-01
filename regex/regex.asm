@@ -7,7 +7,7 @@ section .data
         pattern db "a*ec", 0
 
 section .text
-_start: pcall2 match, pattern, string
+_start: pcall match, pattern, string
 check:  FINISH
 match:
                 push ebp
@@ -43,7 +43,7 @@ lp2:            mov eax, edi
                 inc eax
                 mov [local3], eax
 
-                pcall2 match, dword [local3], dword [local2]
+                pcall match, dword [local3], dword [local2]
 
                 mov eax, [esi]
                 mov ebx, [edi]
