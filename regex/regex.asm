@@ -1,5 +1,5 @@
 %include "stud_io.inc"
-%include "call_func.inc
+%include "call_func.inc"
 global _start
 
 section .data
